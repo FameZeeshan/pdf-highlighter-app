@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+.highlight-box {
+  position: absolute;
+  border: 2px solid yellow; /* The border color represents the highlight color */
+  pointer-events: none; /* Ensures that the highlight box doesn't capture mouse events */
+}
 
 .App-logo {
   height: 40vmin;
