@@ -1,0 +1,11 @@
+/* pdfStyles.css */
+
+/* This class ensures that the PDF is rendered correctly within the container */
+.pdf-container {
+  position: relative;
+}
+
+/* This class ensures that the PDF pages are rendered with the correct size */
+.pdf-page {
+  object-fit: contain;
+}
