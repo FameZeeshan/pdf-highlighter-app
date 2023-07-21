@@ -54,9 +54,23 @@ const PdfHighlighterApp = () => {
   return (
     <div style={{ display: "flex" }}>
       {/* Left side with PDF */}
-      <div style={{ flex: 1 }}>
+      <div
+        style={{
+          flex: 1,
+          backgroundColor: "grey",
+        }}
+      >
         <h5>PDF Highlighter App</h5>
-        <div className="pdf-container">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "10px",
+            paddingTop: "140px",
+            marginTop: "-140px",
+          }}
+          className="pdf-container"
+        >
           <Document file={pdfFile}>
             {/* Render each page with the "pdf-page" class */}
             <Page pageNumber={1} className="pdf-page" />
@@ -81,6 +95,7 @@ const PdfHighlighterApp = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          backgroundColor: "#1a8fe3",
         }}
       >
         {/* Add your content here */}
