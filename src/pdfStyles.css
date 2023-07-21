@@ -17,3 +17,14 @@
   pointer-events: none;
   position: absolute;
 }
+.workingbtn {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  width: 90%;
+}
+button {
+  padding: 15px;
+  border-radius: 10px;
+}
