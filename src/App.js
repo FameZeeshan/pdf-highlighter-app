@@ -33,25 +33,19 @@ const PdfHighlighterApp = () => {
   const calculateHighlighterPosition = () => {
     if (!highlightedBoundingBox) return {};
 
-    const pdfDPI = 72; // Assuming the DPI of the PDF is 72
-    const pdfWidthInInches = 8.5; // Width of the PDF in inches
-    const pdfHeightInInches = 11; // Height of the PDF in inches
-
-    // Convert the bounding box coordinates from inches to pixels
-    const pdfWidthInPixels = pdfWidthInInches * pdfDPI;
-    const pdfHeightInPixels = pdfHeightInInches * pdfDPI;
+    // Assuming the bounding box coordinates are in inches
+    const pdfWidth = 8.5; // Width of the PDF in inches
+    const pdfHeight = 11; // Height of the PDF in inches
 
     return {
-      left: `${(highlightedBoundingBox[0] / pdfWidthInPixels) * 100}%`,
-      top: `${(highlightedBoundingBox[1] / pdfHeightInPixels) * 100}%`,
+      left: `${(highlightedBoundingBox[0] / pdfWidth) * 100}%`,
+      top: `${(highlightedBoundingBox[1] / pdfHeight) * 100}%`,
       width: `${
-        ((highlightedBoundingBox[2] - highlightedBoundingBox[0]) /
-          pdfWidthInPixels) *
+        ((highlightedBoundingBox[2] - highlightedBoundingBox[0]) / pdfWidth) *
         100
       }%`,
       height: `${
-        ((highlightedBoundingBox[3] - highlightedBoundingBox[1]) /
-          pdfHeightInPixels) *
+        ((highlightedBoundingBox[5] - highlightedBoundingBox[1]) / pdfHeight) *
         100
       }%`,
     };
