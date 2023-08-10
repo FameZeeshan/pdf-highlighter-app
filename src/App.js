@@ -56,6 +56,15 @@ const PdfHighlighterApp = () => {
           width: "100%",
         }}
       >
+        <div className="pdfButtons">
+          <button>&lt;</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>&gt;</button>
+        </div>
         <div
           style={{
             display: "flex",
@@ -71,7 +80,7 @@ const PdfHighlighterApp = () => {
               className="highlight-box"
               style={{
                 position: "absolute",
-                border: "3px solid red",
+                border: "2px solid red",
                 ...calculateHighlighterPosition(),
               }}
             />
@@ -86,11 +95,10 @@ const PdfHighlighterApp = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: "#1a8fe3",
+          paddingTop: "50px",
         }}
       >
         {/* Add your content here */}
-        <h5>Form</h5>
 
         {/* Add buttons with different search texts */}
         <div className="workingbtn">
@@ -121,6 +129,13 @@ const PdfHighlighterApp = () => {
             onClick={() => handleButtonClick("www.microsoft.com/investor")}
           >
             www.microsoft.com/investor
+          </button>
+          <button
+            onClick={() =>
+              handleButtonClick("Outstanding as of April 24, 2020")
+            }
+          >
+            Outstanding as of April 24, 2020
           </button>
         </div>
       </div>
