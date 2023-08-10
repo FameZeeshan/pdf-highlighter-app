@@ -60,9 +60,6 @@ const PdfHighlighterApp = () => {
           style={{
             display: "flex",
             justifyContent: "center",
-            padding: "10px",
-            paddingTop: "140px",
-            marginTop: "-140px",
           }}
           className="pdf-container"
         >
@@ -76,6 +73,7 @@ const PdfHighlighterApp = () => {
               style={{
                 position: "absolute",
                 border: "3px solid red",
+
                 ...calculateHighlighterPosition(),
               }}
             />
