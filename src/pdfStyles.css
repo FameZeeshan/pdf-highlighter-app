@@ -28,3 +28,12 @@ button {
   padding: 15px;
   border-radius: 10px;
 }
+#root
+  > div
+  > div:nth-child(1)
+  > div
+  > div
+  > div
+  > div.react-pdf__Page__textContent.textLayer {
+  display: none;
+}
