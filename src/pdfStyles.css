@@ -10,13 +10,6 @@
   object-fit: contain;
 }
 
-/* Add the styles for the highlight box */
-.highlight-box {
-  border: 3px solid red;
-  box-sizing: border-box;
-  pointer-events: none;
-  position: absolute;
-}
 .workingbtn {
   display: flex;
   flex-direction: column;

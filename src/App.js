@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf"; // Import necessary components from the react-pdf library
+import { Document, Page, pdfjs } from "react-pdf";
 import pdfData from "./sample.json";
 import pdfFile from "./sample.pdf";
-import "./pdfStyles.css"; // Import the CSS file for styling
+import "./pdfStyles.css";
 
-// Set the worker URL for pdfjs
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const PdfHighlighterApp = () => {
@@ -32,18 +31,19 @@ const PdfHighlighterApp = () => {
 
     const pdfWidth = 8.5;
     const pdfHeight = 11;
+    const padding = 0.05; // Adjust this value to properly surround the text
+
+    const boundingBoxHeight =
+      highlightedBoundingBox[5] - highlightedBoundingBox[1];
 
     return {
       left: `${(highlightedBoundingBox[0] / pdfWidth) * 100}%`,
-      top: `${(highlightedBoundingBox[1] / pdfHeight) * 100}%`,
+      top: `${((highlightedBoundingBox[1] - padding) / pdfHeight) * 100}%`, // Subtract the padding value
       width: `${
         ((highlightedBoundingBox[2] - highlightedBoundingBox[0]) / pdfWidth) *
         100
       }%`,
-      height: `${
-        ((highlightedBoundingBox[5] - highlightedBoundingBox[1]) / pdfHeight) *
-        100
-      }%`,
+      height: `${(boundingBoxHeight / pdfHeight) * 100}%`, // Adjusted height calculation
     };
   };
 
@@ -54,6 +54,7 @@ const PdfHighlighterApp = () => {
         style={{
           flex: 1,
           backgroundColor: "grey",
+          width: "100%",
         }}
       >
         <div
@@ -63,7 +64,6 @@ const PdfHighlighterApp = () => {
           }}
           className="pdf-container"
         >
-          {/* Render the PDF document using the Document and Page components */}
           <Document file={pdfFile}>
             <Page pageNumber={1} className="pdf-page" />
           </Document>
@@ -73,6 +73,8 @@ const PdfHighlighterApp = () => {
               style={{
                 position: "absolute",
                 border: "3px solid red",
+                padding: "2px",
+                // padding can be changed if alignment is not perfect
 
                 ...calculateHighlighterPosition(),
               }}
