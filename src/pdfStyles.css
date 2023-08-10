@@ -23,10 +23,12 @@
 
   cursor: pointer;
 
-  background-color: rgb(15, 184, 15);
-  padding: 10px;
+  background-color: #006400;
+
   border-radius: 50%;
   font-weight: 800;
+  width: 50px; /* Adjust the size as needed */
+  height: 50px; /* Should be the same as width for a perfect circle */
 }
 .workingbtn {
   background-color: rgb(44, 96, 126);
