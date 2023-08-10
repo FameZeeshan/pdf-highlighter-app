@@ -31,14 +31,13 @@ const PdfHighlighterApp = () => {
 
     const pdfWidth = 8.5;
     const pdfHeight = 11;
-    const padding = 0.05; // Adjust this value to properly surround the text
 
     const boundingBoxHeight =
       highlightedBoundingBox[5] - highlightedBoundingBox[1];
 
     return {
       left: `${(highlightedBoundingBox[0] / pdfWidth) * 100}%`,
-      top: `${((highlightedBoundingBox[1] - padding) / pdfHeight) * 100}%`, // Subtract the padding value
+      top: `${(highlightedBoundingBox[1] / pdfHeight) * 100}%`,
       width: `${
         ((highlightedBoundingBox[2] - highlightedBoundingBox[0]) / pdfWidth) *
         100
@@ -73,9 +72,6 @@ const PdfHighlighterApp = () => {
               style={{
                 position: "absolute",
                 border: "3px solid red",
-                padding: "2px",
-                // padding can be changed if alignment is not perfect
-
                 ...calculateHighlighterPosition(),
               }}
             />
@@ -99,17 +95,32 @@ const PdfHighlighterApp = () => {
         {/* Add buttons with different search texts */}
         <div className="workingbtn">
           <button onClick={() => handleButtonClick("UNITED STATES")}>
-            Search for "Country"
+            Country
           </button>
           <button
             onClick={() =>
               handleButtonClick("SECURITIES AND EXCHANGE COMMISSION")
             }
           >
-            Search for "SECURITIES AND EXCHANGE COMMISSION"
+            SECURITIES AND EXCHANGE COMMISSION
           </button>
           <button onClick={() => handleButtonClick("Washington, D.C. 20549")}>
-            Search for "Address"
+            Address
+          </button>
+          <button
+            onClick={() =>
+              handleButtonClick("Common Stock, $0.00000625 par value per share")
+            }
+          >
+            Common Stock, $0.00000625 par value per share
+          </button>
+          <button onClick={() => handleButtonClick("2.125% Notes due 2021")}>
+            2.125% Notes due 2021
+          </button>
+          <button
+            onClick={() => handleButtonClick("www.microsoft.com/investor")}
+          >
+            www.microsoft.com/investor
           </button>
         </div>
       </div>
