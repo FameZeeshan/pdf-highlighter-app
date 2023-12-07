@@ -1,6 +1,8 @@
 # Project Name: PDF Annotation and Navigation Tool
 
-Project Description: Developed a web-based tool for annotating and navigating PDF documents. The application allows users to highlight specific text in a PDF, displaying bounding boxes around the selected content. Implemented features for seamless navigation through pages. Technologies used include React.js and the react-pdf library. This project demonstrates proficiency in front-end development, user interface design, and PDF manipulation.
+<h2>Project Name: PDF Annotation and Navigation Tool</h2>
+
+<h3>Project Description: Developed a web-based tool for annotating and navigating PDF documents. The application allows users to highlight specific text in a PDF, displaying bounding boxes around the selected content. Implemented features for seamless navigation through pages. Technologies used include React.js and the react-pdf library. This project demonstrates proficiency in front-end development, user interface design, and PDF manipulation. This project is designed to best fit on Desktop only.</h3>
 
 # Getting Started with Create React App
 
